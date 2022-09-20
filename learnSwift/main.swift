@@ -1,0 +1,205 @@
+//
+//  main.swift
+//  learnSwift
+//
+//  Created by 方小新 on 2022/9/20.
+//
+
+import Foundation
+
+print("Hello, World!")
+print("hello Swift")
+print("早")
+    //注释代码
+    /*
+ 多行注释
+ 多行注释
+ 多行注释
+ */
+print("早")
+
+var name = "Amy"
+var otherName = "Tom"
+print(name)
+name = otherName + name
+print(name)
+
+let num: Int = 3
+let zero:Int = 0
+var review:Int = -5
+review = zero
+print(Int.max)
+print(Int.min)
+print("------------------------")
+//浮点数
+let pi:Double = 3.1415
+print(pi)
+print("------------------------")
+//字符串，类型注释
+let poem: String = "To be \n\\tor not to be."
+print(poem)
+let emtpy:String = ""
+print(emtpy)
+print(emtpy.count)
+print(poem.count)
+
+var total = 100
+print(total)
+
+//类型推论
+let moneySpent = "90.08"
+print(moneySpent)
+
+print("------------------------")
+    //基本数学运算
+let a:Double = 4
+var b = 5.60
+
+
+b = 8
+    //一元运算
+print(-a)
+    //二元运算
+print(a + b)
+print(a*b)
+print(a/b)
+let c = 7
+let d = 3
+print(c%d)
+    //复合运算
+var t=3.4
+t = t + 1.1
+print(t)
+t += 1.5
+print(t)
+
+    //类型转换
+var  x=6.9
+var y=3
+print(x/Double(y))
+print(Int(x)/(y))
+    //优先级
+print(3+4*5)
+print((3+4)*5)
+
+    //字符串计算
+var firstName = "fang"
+var lastName = "siyu"
+    //字符串插值
+print(firstName + " \(x) " + lastName)
+
+print("作业")
+
+// Question 0
+// 理解所有的代码
+
+// Question 1
+// 任务：将华氏度转化为摄氏度
+// 提示：华氏度减去32之后再除以1.8，我们就能得到摄氏度。
+print("Question 1")
+let temperatureInF1: Double = 96.8
+let temperatureInC1 = (temperatureInF1 - 32)/1.8 // TODO: 把赋值的右边改成正确的公式
+print("\(temperatureInF1)华氏度在摄氏度下是\(temperatureInC1)")
+
+// Question 2
+// 任务：将摄氏度转化为华氏度，最后显示一个整数结果
+// 提示：华氏度等于摄氏度乘以1.8之后再加32
+print("Question 2")
+let temperatureInC2: Double = 36.0
+let temperatureInF2 = Int(temperatureInC2 * 1.8 + 32) // TODO: 把赋值的右边改成正确的公式
+print("\(temperatureInC2)摄氏度在华氏度下是\(temperatureInF2)")
+
+// Question3
+// 任务：将一下这句话的作者，内容，和字符串的长度print出来。
+// 示例输出：xxx曾说过："xxxxxx" 这句话一共有xxx个字符。
+// 提示：在字符串字面量中使用双引号需要用到转义字符（反斜杠）
+print("Question 3")
+let author = "鲁迅"
+let text = "墙外有两棵树，一棵是枣树，另一棵也是枣树。"
+let result = author + "曾说过：\"\(text)\"" + "这句话一共有\(text.count)个字符。"
+print(result)
+// TODO: 把结果print出来。
+
+    //Boolean
+let first = true
+let second = false
+print(!first)
+print(4 == 4)
+
+    //条件语句
+let temp = 24
+if temp < 10 {
+    print("多穿衣服，冷")
+} else if temp > 30{
+    print("天气很热，开空调")
+} else {
+    print("天气不错")
+}
+
+if 1 == 1 || 2 == 2 {
+    print(true)
+}else{
+    print(false)
+}
+print("_______________")
+//函数 Functions
+func sayHello(name: String) {
+    print("世界你好，\(name)")
+}
+
+sayHello(name: "小新")
+
+sayHello(name: "小新Ssr")
+
+func sayAdd(number1:Int,number2:Int){
+    print("\(number1) + \(number2)")
+}
+
+sayAdd(number1:2, number2:2)
+print("_______________")
+
+func greet(name:String) -> String {
+    let result = "你好，" + name + "！"
+    return result
+}
+print(greet(name: "Tom"))
+print("_______________")
+    //作业
+let minLength = 3
+let maxLength = 12
+
+func checkNumber(name:String) -> Bool {
+    if(name.count > minLength && name.count < maxLength){
+        return true
+    }else {
+        return false
+    }
+}
+
+print(checkNumber(name: "hahahahahah"))
+print(checkNumber(name: "hah"))
+print("_______________")
+
+func getLevel(number:Int) -> String{
+    if(number >= 90 && number <= 100){
+        return "A"
+    }else if(number >= 80 && number <= 89){
+        return "B"
+    }else if(number >= 70 && number <= 79){
+        return "C"
+    }else if(number >= 60 && number <= 69){
+        return "D"
+    }else if(number >= 0 && number <= 89){
+        return "F"
+    }else {
+        return "N/A"
+    }
+}
+
+print(getLevel(number:68))
+print(getLevel(number:-68))
+print(getLevel(number:689))
+print(getLevel(number:98))
+print(getLevel(number:60))
+
+
