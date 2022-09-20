@@ -299,7 +299,7 @@ func getUsername() -> String? {
     }
 }
 
-let username: String? = getUsername()
+var username: String? = getUsername()
 if username == nil {
     print("no value")
 }else{
@@ -315,3 +315,11 @@ func getHalf(para:Int) -> Int? {
     }
 }
 print(getHalf(para:9))
+
+
+var nihao: String? = nil
+print("你好，" + (nihao ?? "匿名用户"))
+
+var ids: String! = nil
+ids = "4399"
+print("ID:" + ids)
