@@ -201,5 +201,117 @@ print(getLevel(number:-68))
 print(getLevel(number:689))
 print(getLevel(number:98))
 print(getLevel(number:60))
+print("________while 循环_______")
+// while 循环
+func countNature(number: Int){
+    var counter = 0;
+    while counter <= number{
+        print(counter)
+        if counter == 3 {
+            break
+        }
+        counter += 1
+    }
+}
+
+countNature(number: 5)
+
+countNature(number: -1)
+
+var names: [String] = ["Tom","Amy","Dav"]
+
+let data: [Int] = []
+
+let someDoubles = Array(repeating: 0.0, count: 5)
+names[1] = "IT"
+print(names[1])
+
+print(names.count)
+
+print(names.isEmpty)
+
+//追加一个值
+names.append("Echo")
+
+print(names)
 
 
+//插入一个值
+
+names.insert("Rose", at: 2)
+
+print(names)
+
+//使用insert 实现 append
+
+//数组拼接
+
+let othersName = ["AAA","BBB"]
+names += othersName;
+print(names)
+
+//实现一个长度为10的自然数数组
+var numberArr:[Int] = Array(repeating: 0, count: 10)
+var count = 0
+while count < 10{
+    numberArr[count] = count
+    count += 1
+}
+print(numberArr)
+
+
+var array2:[Int] = []
+var index = 0
+while index < 10{
+    array2.append(index)
+    index += 1
+}
+print(array2)
+
+
+//遍历数组
+let myArray = [0,1,2,3,4,5]
+
+var index2 = 0
+while index2 < myArray.count{
+    print(myArray[index2])
+    index2 += 1
+}
+
+for i in myArray {
+    print(i)
+}
+
+
+for i in 0..<names.count{
+    print(names[i])
+}
+
+
+//可选类型 Optionals
+
+let isLoginIn = false
+func getUsername() -> String? {
+    if isLoginIn {
+        return "Bob"
+    }else {
+        return nil
+    }
+}
+
+let username: String? = getUsername()
+if username == nil {
+    print("no value")
+}else{
+    print(username)
+}
+
+//练习
+func getHalf(para:Int) -> Int? {
+    if para%2 == 1 {
+        return nil
+    }else{
+        return para/2
+    }
+}
+print(getHalf(para:9))
