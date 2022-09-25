@@ -303,7 +303,7 @@ var username: String? = getUsername()
 if username == nil {
     print("no value")
 }else{
-    print(username)
+    print(username ?? "")
 }
 
 //练习
@@ -314,7 +314,7 @@ func getHalf(para:Int) -> Int? {
         return para/2
     }
 }
-print(getHalf(para:9))
+print(getHalf(para:9) ?? 0)
 
 
 var nihao: String? = nil
@@ -323,3 +323,66 @@ print("你好，" + (nihao ?? "匿名用户"))
 var ids: String! = nil
 ids = "4399"
 print("ID:" + ids)
+
+// Optionals Binding 可选绑定
+let grade:Int? = nil
+if let unwrap = grade {
+    print(unwrap)
+}else{
+    print("Grade is not yet")
+}
+
+//双问号默认值
+let nameX:String? = nil
+print("你好，" + (nameX ?? "匿名"))
+
+//自动解析 Implicity Unwrapped Value (危险)
+
+var idX: String! = nil
+idX = "4399"
+print("ID:" + idX)
+
+//练习 重复打印字符串 一个函数
+func repeatPrint(content: String,count: Int){
+//    var counter = 0
+//    while counter < count{
+//        print(content)
+//        counter += 1
+//    }
+    for _ in 0..<count{
+        print(content)
+    }
+}
+
+repeatPrint(content: "mingzi", count: 3)
+
+//打印金字塔
+func printPyramid(height: Int){
+    for i in 1...height{
+//        var j = 0
+//        while j < i{
+//            print("*",terminator: "")
+//            j += 1
+//        }
+        for _ in 0..<i{
+            print("*",terminator: "")
+        }
+        print("")
+    }
+}
+
+printPyramid(height: 5)
+
+
+//转换绝对值
+
+func arrayAbs(input: [Int]) -> [Int]{
+    var localInput = input
+    for index in 0..<localInput.count{
+        if localInput[index] < 0 {
+            localInput[index] = -localInput[index]
+        }
+    }
+    return localInput
+}
+print(arrayAbs(input: [1,2,0,-3,-2,-8,9,10]))
