@@ -386,3 +386,22 @@ func arrayAbs(input: [Int]) -> [Int]{
     return localInput
 }
 print(arrayAbs(input: [1,2,0,-3,-2,-8,9,10]))
+
+
+//打印指定值的斐拉契数列
+// fibonacci(max: 30)
+// 1 1 2 3 5 8 13 21 ...
+
+func fibonacci(max: Int){
+    var result: [Int] = [1,1]
+    var i = 0
+    while (result[i] + result[i+1]) < max{
+        result.append(result[i] + result[i+1])
+        i += 1
+    }
+    for item in result {
+        print(item,terminator: ",")
+    }
+}
+
+fibonacci(max: 100)
