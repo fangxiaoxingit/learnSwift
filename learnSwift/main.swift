@@ -405,3 +405,33 @@ func fibonacci(max: Int){
 }
 
 fibonacci(max: 100)
+
+
+//元组 Tuple,可以是不同类型
+let aDouble = 3.14
+let aInt = 4
+var twoValues = (aDouble,aInt)
+print(twoValues)
+
+twoValues = (8.88,123)
+
+print(twoValues)
+
+print(twoValues.0)
+print(twoValues.1)
+
+var personS:(name:String,age: Int) = (name:"张三", age: 38)
+print(personS.name)
+
+personS.name = "李四"
+print(personS.name)
+//使用Tuple 返回多个值
+func getClssmate() -> (String,Int){
+    let name = "Tom"
+    let age = 6
+    return (name,age)
+}
+print(getClssmate())
+
+
+//完结 https://www.bilibili.com/video/BV1vP411L7r9/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=c26c2fbb1e3fc396e674e59b1ad4587d
